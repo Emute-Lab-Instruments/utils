@@ -1,0 +1,6 @@
+option('string_backend',
+    type: 'combo',
+    choices: ['std', 'extended_std', 'arduino', 'other'],
+    value: 'std',
+    description: 'Backend implementation for ELI::String'
+)
