@@ -1,4 +1,4 @@
-option('string_backend',
+option('ELI_STRING_BACKEND',
     type: 'combo',
     choices: ['std', 'extended_std', 'arduino', 'other'],
     value: 'std',
