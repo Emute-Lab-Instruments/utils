@@ -7,22 +7,22 @@ project('eli-utils', 'cpp',
 )
 
 # Configure string backend option
-string_backend = get_option('string_backend')
+string_backend = get_option('ELI_STRING_BACKEND')
 string_backend_define = ''
 
-if string_backend == 'std'
+if string_backend == 'STD'
     string_backend_define = 'ELI_STRING_STD'
-elif string_backend == 'extended_std'
+elif string_backend == 'EXTENDED_STD'
     string_backend_define = 'ELI_STRING_EXTENDED_STD'
-elif string_backend == 'arduino'
+elif string_backend == 'ARDUINO'
     string_backend_define = 'ELI_STRING_ARDUINO'
 else
     string_backend_define = 'ELI_STRING_OTHER'
 endif
 
 # Define the string library
-eli_string_lib = static_library('eli-string',
-    ['src/ELI_String.h'],
+eli_string_lib = static_library('ELI_UTILS_String',
+    ['src/utils/ELI_String.h'],
     include_directories: include_directories('src'),
     cpp_args: ['-DELI_STRING_BACKEND=' + string_backend_define],
     install: true
